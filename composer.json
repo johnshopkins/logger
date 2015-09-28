@@ -1,9 +1,16 @@
 {
   "name": "johnshopkins/logger",
   "description": "A logger used across our projects.",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/johnshopkins/logger-exchange.git"
+    }
+  ],
   "require": {
     "monolog/monolog": "1.8.*",
-    "swiftmailer/swiftmailer": "5.1.*"
+    "swiftmailer/swiftmailer": "5.1.*",
+    "johnshopkins/logger-exchange": "dev-master"
   },
   "authors": [
     {
