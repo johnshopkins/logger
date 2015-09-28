@@ -29,7 +29,7 @@ class Logger
 		}
 	}
 
-  protected function get()
+  public function get()
   {
     return new \LoggerExchange\adapters\Monolog($this->logger);
   }
