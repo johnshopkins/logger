@@ -1,0 +1,19 @@
+{
+  "name": "johnshopkins/logger",
+  "description": "A logger used across our projects.",
+  "require": {
+    "monolog/monolog": "1.8.*",
+    "swiftmailer/swiftmailer": "5.1.*"
+  },
+  "authors": [
+    {
+      "name": "Jen Wachter",
+      "email": "jwachter@jhu.edu"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Logger\\": ["src/"]
+    }
+  }
+}
