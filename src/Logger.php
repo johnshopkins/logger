@@ -8,10 +8,12 @@ class Logger
 	protected $machineName;
 	protected $logfile;
 
-	public function __construct($niceName, $machineName, $localFile, $stagingFile, $productionFile)
+	public function __construct($niceName, $machineName, $localFile, $stagingFile, $productionFile, $cache = null)
 	{
 		$this->niceName = $niceName;
 		$this->machineName = $machineName;
+		$this->cache = $cache;
+
 		$this->logger = new \Monolog\Logger($this->machineName);
 
 		if (ENV == "local") {
@@ -31,7 +33,7 @@ class Logger
 
   public function get()
   {
-    return new \LoggerExchange\adapters\Monolog($this->logger);
+    return new \LoggerExchange\adapters\Monolog($this->logger, $this->cache);
   }
 
 	protected function setupStreamHandler()
