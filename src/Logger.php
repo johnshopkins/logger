@@ -52,7 +52,7 @@ class Logger
 		$message = \Swift_Message::newInstance()
 			->setSubject("Error on {$this->niceName}")
 			->setFrom(array("noreply@jhu.edu" => "jhu.edu"))
-			->setTo(array("jwachter@jhu.edu", "jenleighkelly@gmail.com"));
+			->setTo(array("jwachter@jhu.edu"));
 
 		$this->logger->pushHandler(new \Monolog\Handler\SwiftMailerHandler($mailer, $message, \Monolog\Logger::WARNING));
 	}
