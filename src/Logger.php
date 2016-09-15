@@ -20,6 +20,8 @@ class Logger
 			$this->logfile = $localFile;
 		} else if (ENV == "staging") {
 			$this->logfile = $stagingFile;
+		} else if (ENV == "beta") {
+			$this->logfile = $productionFile;
 		} else {
 			$this->logfile = $productionFile;
 		}
