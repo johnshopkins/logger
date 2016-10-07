@@ -8,7 +8,7 @@ class Logger
 	protected $machineName;
 	protected $logfile;
 
-	public function __construct($niceName, $machineName, $localFile, $stagingFile, $productionFile, $cache = null)
+	public function __construct($niceName, $machineName, $localFile, $stagingFile, $productionFile, $cache = null, $betaFile = null)
 	{
 		$this->niceName = $niceName;
 		$this->machineName = $machineName;
@@ -20,6 +20,8 @@ class Logger
 			$this->logfile = $localFile;
 		} else if (ENV == "staging") {
 			$this->logfile = $stagingFile;
+		} else if (ENV == "beta") {
+			$this->logfile = $betaFile;
 		} else {
 			$this->logfile = $productionFile;
 		}
