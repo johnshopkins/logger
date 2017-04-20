@@ -4,47 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f6c170dec8eda1c2007bec2ea8f127e0",
+    "hash": "a87fd6f9fc324636ffcae5b3d8486f14",
+    "content-hash": "52e8e21415994a8bf660223cc941650c",
     "packages": [
-        {
-            "name": "johnshopkins/logger-exchange",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/johnshopkins/logger-exchange.git",
-                "reference": "2498c8bb855dac730f646429f969a12bded1ac88"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/johnshopkins/logger-exchange/zipball/2498c8bb855dac730f646429f969a12bded1ac88",
-                "reference": "2498c8bb855dac730f646429f969a12bded1ac88",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "LoggerExchange\\": [
-                        "src/"
-                    ]
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jen Wachter",
-                    "email": "jwachter@jhu.edu"
-                }
-            ],
-            "description": "A collection of PHP interfaces and adapters to make swapping out logger dependencies quick and easy.",
-            "homepage": "http://github.com/johnshopkins/logger-exchange",
-            "support": {
-                "source": "https://github.com/johnshopkins/logger-exchange/tree/master",
-                "issues": "https://github.com/johnshopkins/logger-exchange/issues"
-            },
-            "time": "2015-09-28 17:29:44"
-        },
         {
             "name": "monolog/monolog",
             "version": "1.8.0",
@@ -115,22 +77,30 @@
         },
         {
             "name": "psr/log",
-            "version": "1.0.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
                 "shasum": ""
             },
+            "require": {
+                "php": ">=5.3.0"
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
-                "psr-0": {
-                    "Psr\\Log\\": ""
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -144,12 +114,13 @@
                 }
             ],
             "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
             "keywords": [
                 "log",
                 "psr",
                 "psr-3"
             ],
-            "time": "2012-12-21 11:40:51"
+            "time": "2016-10-10 12:19:37"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -206,9 +177,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "johnshopkins/logger-exchange": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
