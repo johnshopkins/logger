@@ -9,8 +9,7 @@
   ],
   "require": {
     "monolog/monolog": "1.8.*",
-    "swiftmailer/swiftmailer": "5.1.*",
-    "johnshopkins/logger-exchange": "dev-master"
+    "swiftmailer/swiftmailer": "5.1.*"
   },
   "authors": [
     {
