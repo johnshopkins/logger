@@ -18,7 +18,7 @@ class Logger
 
 		if (ENV == "local") {
 			$this->logfile = $localFile;
-		} else if (ENV == "staging") {
+		} else if (ENV == "staging" || ENV == "qa") {
 			$this->logfile = $stagingFile;
 		} else if (ENV == "beta") {
 			$this->logfile = $betaFile;
