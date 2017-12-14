@@ -2,7 +2,7 @@
 
 namespace Logger;
 
-class Monolog
+class Monolog implements LoggerInterface
 {
 	public function __construct($client)
 	{
@@ -16,32 +16,32 @@ class Monolog
    * @param  array  $data    Additional logging data (key => value)
    * @return null
    */
-  protected function log($level, $message, $data = array())
+  protected function log($level, $message, array $data = [])
   {
     $this->client->log($level, $message, $data);
   }
 
-  public function addDebug($message, $data = array())
+  public function addDebug($message, array $data = [])
   {
     return $this->log(100, $message, $data);
   }
 
-	public function addInfo($message, $data = array())
+	public function addInfo($message, array $data = [])
   {
     return $this->log(200, $message, $data);
   }
 
-	public function addWarning($message, $data = array())
+	public function addWarning($message, array $data = [])
   {
     return $this->log(300, $message, $data);
   }
 
-	public function addError($message, $data = array())
+	public function addError($message, array $data = [])
   {
     return $this->log(400, $message, $data);
   }
 
-  public function addFatal($message, $data = array())
+  public function addFatal($message, array $data = [])
   {
     return $this->log(500, $message, $data);
   }
