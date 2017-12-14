@@ -2,7 +2,7 @@
 
 namespace Logger;
 
-class Sentry
+class Sentry implements LoggerInterface
 {
 	public function __construct($client)
 	{
@@ -16,7 +16,7 @@ class Sentry
    * @param  array  $data    Additional logging data (key => value)
    * @return null
    */
-  protected function log($level, $message, $data = [])
+  protected function log($level, $message, array $data = [])
   {
     $this->client->captureMessage($message, array("log"), array(
       "extra" => $data,
@@ -24,27 +24,27 @@ class Sentry
     ));
   }
 
-  public function addDebug($message, $data = [])
+  public function addDebug($message, array $data = [])
   {
     return $this->log("debug", $message, $data);
   }
 
-	public function addInfo($message, $data = [])
+	public function addInfo($message, array $data = [])
   {
     return $this->log("info", $message, $data);
   }
 
-	public function addWarning($message, $data = [])
+	public function addWarning($message, array $data = [])
   {
     return $this->log("warning", $message, $data);
   }
 
-	public function addError($message, $data = [])
+	public function addError($message, array $data = [])
   {
     return $this->log("error", $message, $data);
   }
 
-  public function addFatal($message, $data = [])
+  public function addFatal($message, array $data = [])
   {
     return $this->log("fatal", $message, $data);
   }
