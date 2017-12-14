@@ -16,7 +16,7 @@ class Sentry
    * @param  array  $data    Additional logging data (key => value)
    * @return null
    */
-  protected function log($level, $message, $data = array())
+  protected function log($level, $message, $data = [])
   {
     $this->client->captureMessage($message, array("log"), array(
       "extra" => $data,
@@ -24,27 +24,27 @@ class Sentry
     ));
   }
 
-  public function addDebug($message, $data = array())
+  public function addDebug($message, $data = [])
   {
     return $this->log("debug", $message, $data);
   }
 
-	public function addInfo($message, $data = array())
+	public function addInfo($message, $data = [])
   {
     return $this->log("info", $message, $data);
   }
 
-	public function addWarning($message, $data = array())
+	public function addWarning($message, $data = [])
   {
     return $this->log("warning", $message, $data);
   }
 
-	public function addError($message, $data = array())
+	public function addError($message, $data = [])
   {
     return $this->log("error", $message, $data);
   }
 
-  public function addFatal($message, $data = array())
+  public function addFatal($message, $data = [])
   {
     return $this->log("fatal", $message, $data);
   }
