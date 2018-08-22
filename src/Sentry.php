@@ -28,8 +28,6 @@ class Sentry implements LoggerInterface
 		// throw the rest into extra
 		$compiled['extra'] = $data;
 
-		error_log(json_encode($compiled));
-
     $this->client->captureMessage($message, ['log'], $compiled);
   }
 
