@@ -28,7 +28,7 @@ class Sentry implements LoggerInterface
 		// throw the rest into extra
 		$compiled['extra'] = $data;
 
-    $this->client->captureMessage($message, ['log'], $compiled);
+    return $this->client->captureMessage($message, ['log'], $compiled);
   }
 
   public function addDebug($message, array $data = [])
