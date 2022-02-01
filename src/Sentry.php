@@ -25,10 +25,10 @@ class Sentry implements LoggerInterface
 			unset($data['tags']);
 		}
 
-		// throw the rest into extra
-		$compiled['extra'] = $data;
+		// // throw the rest into extra
+		// $compiled['extra'] = $data;
 
-    return $this->client->captureMessage($message, ['log'], $compiled);
+    return $this->client->captureMessage($message, $data, $compiled);
   }
 
   public function addDebug($message, array $data = [])
