@@ -1,8 +1,8 @@
 <?php
 
-namespace Logger;
+namespace Logger\Interfaces;
 
-interface LoggerInterface
+interface Logger
 {
   public function addDebug($message, array $data = []);
 	public function addInfo($message, array $data = []);

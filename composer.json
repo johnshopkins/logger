@@ -1,6 +1,6 @@
 {
   "name": "johnshopkins/logger",
-  "description": "A logger used across our projects.",
+  "description": "Loggers used across our projects.",
   "require": {},
   "autoload": {
     "psr-4": {

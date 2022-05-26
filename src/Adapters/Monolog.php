@@ -1,8 +1,10 @@
 <?php
 
-namespace Logger;
+namespace Logger\Adapters;
 
-class Monolog implements LoggerInterface
+use Logger\Interfaces\Logger;
+
+class Monolog implements Logger
 {
 	public function __construct($client)
 	{
