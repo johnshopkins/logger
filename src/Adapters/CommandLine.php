@@ -1,8 +1,10 @@
 <?php
 
-namespace Logger;
+namespace Logger\Adapters;
 
-class CommandLine implements LoggerInterface
+use Logger\Interfaces\Logger;
+
+class CommandLine implements Logger
 {
   public $foregroundColors = [
     'debug' => '0;36',    // cyan
