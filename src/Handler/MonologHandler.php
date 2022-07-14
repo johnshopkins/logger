@@ -6,7 +6,7 @@ class MonologHandler implements HandlerInterface
 {
   protected $client;
 
-  public function __construct($name, $logFile)
+  public function __construct($loggerName, $logFile)
   {
     $this->client = new \Monolog\Logger($loggerName);
 
