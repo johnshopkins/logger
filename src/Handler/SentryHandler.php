@@ -11,6 +11,11 @@ class SentryHandler implements HandlerInterface
 
   public function handle(string $level, string $message, array $context = []): void
   {
+    if (in_array($level, ['critical', 'alert', 'emergency'])) {
+      // sentry only has fatal level
+      $level = 'fatal';
+    }
+
     \Sentry\withScope(function (\Sentry\State\Scope $scope) use ($level, $message, $context): void {
 
       $scope->setLevel(\Sentry\Severity::$level());
