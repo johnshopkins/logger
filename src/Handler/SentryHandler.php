@@ -31,7 +31,7 @@ class SentryHandler implements HandlerInterface
         $scope->setContext('app context', $context['context']);
       }
 
-      if (isset($context['tags']) && is_array($context['context'])) {
+      if (isset($context['tags']) && is_array($context['tags'])) {
         // examples: wp.theme, wp.plugin
         // docs: https://docs.sentry.io/platforms/php/enriching-events/tags/
         foreach ($context['tags'] as $key => $value) {
