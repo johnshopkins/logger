@@ -2,8 +2,12 @@
 
 namespace Logger\Handler;
 
+use Sentry\EventId;
+
 class SentryHandler implements HandlerInterface
 {
+  protected ?string $lastEventId;
+
   public function __construct($dsn, $options = [])
   {
     \Sentry\init(array_merge($options, ['dsn' => $dsn]));
@@ -21,7 +25,7 @@ class SentryHandler implements HandlerInterface
       $level = 'fatal';
     }
 
-    \Sentry\withScope(function (\Sentry\State\Scope $scope) use ($level, $message, $context): void {
+    $this->lastEventId = \Sentry\withScope(function (\Sentry\State\Scope $scope) use ($level, $message, $context): ?EventId {
 
       $scope->setLevel(\Sentry\Severity::$level());
 
@@ -39,7 +43,12 @@ class SentryHandler implements HandlerInterface
         }
       }
 
-      \Sentry\captureMessage($message);
+      return \Sentry\captureMessage($message);
     });
+  }
+
+  public function getLastEventId()
+  {
+    return $this->lastEventId;
   }
 }

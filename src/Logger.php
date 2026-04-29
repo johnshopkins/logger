@@ -13,4 +13,13 @@ class Logger extends AbstractLogger
   {
     $this->handler->handle($level, (string) $message, $context);
   }
+
+  public function getLastEventId()
+  {
+    if (method_exists($this->handler, 'getLastEventId')) {
+      return $this->handler->getLastEventId();
+    }
+
+    return null;
+  }
 }
